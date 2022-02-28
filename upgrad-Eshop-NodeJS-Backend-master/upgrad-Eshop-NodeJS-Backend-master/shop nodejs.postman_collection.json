@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "d9495430-1284-49fd-9a84-9f498c04d07f",
+		"name": "shop nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getallusers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/auth/getAllUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup createuser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"super\",\r\n    \"lastName\": \"cn55\",\r\n    \"password\": \"12345\",\r\n    \"email\": \"super@gmail.com\",\r\n    \"contactNumber\": \"1234567899\",\r\n    \"role\": \"user\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ironman@gmail.com\",\r\n    \"password\":\"12345\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "address",
+			"item": [
+				{
+					"name": "add address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"waterman\",\r\n    \"contactNumber\":\"1234567899\",\r\n    \"street\":\"deccan\",\r\n    \"landmark\":\"mountain\",\r\n    \"city\":\"pune\",\r\n    \"state\":\"maharashtra\",\r\n    \"zipcode\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/addresses",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/addresses/getAddress",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"addresses",
+								"getAddress"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZmM2YmVkYzdkZWZjMzFlMDVmYTZlIn0sImlhdCI6MTY0NTIwMTA4Nn0.W1iMp54yHKyluKeinCforYz8BO0IU9nLtMvY8ZiiraA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\":\"apple watch\",\r\n    \"category\":\"technology\",\r\n    \"price\":\"20000\",\r\n    \"description\":\"smart watch\",\r\n    \"manufacturer\":\"india\",\r\n    \"availableItems\":\"40\",\r\n    \"imageUrl\":\"123456\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZmM2YmVkYzdkZWZjMzFlMDVmYTZlIn0sImlhdCI6MTY0NTIwMTA4Nn0.W1iMp54yHKyluKeinCforYz8BO0IU9nLtMvY8ZiiraA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"apple1\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/products/620fc6ffdc7defc31e05fa70",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"620fc6ffdc7defc31e05fa70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZmM2YmVkYzdkZWZjMzFlMDVmYTZlIn0sImlhdCI6MTY0NTIwMTA4Nn0.W1iMp54yHKyluKeinCforYz8BO0IU9nLtMvY8ZiiraA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/products/620fc6ffdc7defc31e05fa70",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"products",
+								"620fc6ffdc7defc31e05fa70"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "get orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZmM2YmVkYzdkZWZjMzFlMDVmYTZlIn0sImlhdCI6MTY0NTIwMTA4Nn0.W1iMp54yHKyluKeinCforYz8BO0IU9nLtMvY8ZiiraA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":\"40\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZmM2YmVkYzdkZWZjMzFlMDVmYTZlIn0sImlhdCI6MTY0NTIwMTA4Nn0.W1iMp54yHKyluKeinCforYz8BO0IU9nLtMvY8ZiiraA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/orders/62107fbf0de00d1c997371c3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"62107fbf0de00d1c997371c3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
